@@ -36,77 +36,77 @@ echo "source ~/.zsh-git-town/git-town.plugin.zsh" >> ~/.zshrc
 
 | Alias  | Command             | Description                           |
 |--------|---------------------|---------------------------------------|
-| `gtt`  | `git town`          | Main Git Town command                |
-| `gth`  | `git town hack`     | Create a new feature branch          |
-| `gtsy` | `git town sync`     | Sync current branch with remote      |
-| `gtsw` | `git town switch`   | Switch branches with dependency check|
-| `gtp`  | `git town propose`  | Create a PR/MR                       |
-| `gtsh` | `git town ship`     | Ship feature (merge and cleanup)     |
+| `gtt`   | `git town`          | Main Git Town command                |
+| `gtth`  | `git town hack`     | Create a new feature branch          |
+| `gttsy` | `git town sync`     | Sync current branch with remote      |
+| `gttsw` | `git town switch`   | Switch branches with dependency check|
+| `gttp`  | `git town propose`  | Create a PR/MR                       |
+| `gttsh` | `git town ship`     | Ship feature (merge and cleanup)     |
 
 ### Error Recovery & Progress Control
 
 | Alias  | Command                   | Description                    |
 |--------|---------------------------|--------------------------------|
-| `gtc`  | `git town continue`       | Continue after conflict        |
-| `gtrl` | `git town runlog`         | Show execution log             |
-| `gtsk` | `git town skip`           | Skip current branch in process |
-| `gtsu` | `git town status`         | Show current status            |
-| `gtss` | `git town status show`    | Show detailed run state        |
-| `gtsr` | `git town status reset`   | Reset run state                |
-| `gtun` | `git town undo`           | Undo last Git Town operation  |
+| `gttc`  | `git town continue`       | Continue after conflict        |
+| `gttrl` | `git town runlog`         | Show execution log             |
+| `gttsk` | `git town skip`           | Skip current branch in process |
+| `gttsu` | `git town status`         | Show current status            |
+| `gttss` | `git town status show`    | Show detailed run state        |
+| `gttsr` | `git town status reset`   | Reset run state                |
+| `gttun` | `git town undo`           | Undo last Git Town operation  |
 
 ### Stack Operations
 
 | Alias  | Command                   | Description                      |
 |--------|---------------------------|----------------------------------|
-| `gtap` | `git town append`         | Add child branch at end          |
-| `gtdt` | `git town detach`         | Detach branch from parent        |
-| `gtdp` | `git town diff-parent`    | Show diff with parent branch     |
-| `gtmg` | `git town merge`          | Merge parent into current        |
-| `gtpd` | `git town prepend`        | Insert branch between parent     |
-| `gtsp` | `git town set-parent`     | Change parent branch             |
-| `gtswp`| `git town swap`           | Swap parent-child relationship   |
-| `gtwk` | `git town walk`           | Walk stack and execute commands  |
+| `gttap` | `git town append`         | Add child branch at end          |
+| `gttdt` | `git town detach`         | Detach branch from parent        |
+| `gttdp` | `git town diff-parent`    | Show diff with parent branch     |
+| `gttmg` | `git town merge`          | Merge parent into current        |
+| `gttpd` | `git town prepend`        | Insert branch between parent     |
+| `gttsp` | `git town set-parent`     | Change parent branch             |
+| `gttswp`| `git town swap`           | Swap parent-child relationship   |
+| `gttwk` | `git town walk`           | Walk stack and execute commands  |
 
 ### Sync Strategies
 
 | Alias  | Command                | Description                        |
 |--------|------------------------|------------------------------------|
-| `gtct` | `git town contribute`  | Stop partial sync (for teams)     |
-| `gtob` | `git town observe`     | Stop syncing your contributions   |
-| `gtpk` | `git town park`        | Completely stop syncing            |
-| `gtpt` | `git town prototype`   | Local-only mode (no push)         |
+| `gttct` | `git town contribute`  | Stop partial sync (for teams)     |
+| `gttob` | `git town observe`     | Stop syncing your contributions   |
+| `gttpk` | `git town park`        | Completely stop syncing            |
+| `gttpt` | `git town prototype`   | Local-only mode (no push)         |
 
 ### Configuration & Setup
 
 | Alias   | Command                      | Description                  |
 |---------|------------------------------|------------------------------|
-| `gtcpl` | `git town completion`        | Generate shell completion    |
-| `gtcfg` | `git town config`            | Show/update configuration    |
-| `gtcfgp`| `git town config get-parent` | Show parent of current branch|
-| `gtcfrm`| `git town config remove`     | Remove all Git Town config   |
-| `gtcfgs`| `git town config setup`      | Interactive setup            |
-| `gtoff` | `git town offline`           | Toggle offline mode          |
+| `gttcpl` | `git town completion`        | Generate shell completion    |
+| `gttcfg` | `git town config`            | Show/update configuration    |
+| `gttcfgp`| `git town config get-parent` | Show parent of current branch|
+| `gttcfrm`| `git town config remove`     | Remove all Git Town config   |
+| `gttcfgs`| `git town config setup`      | Interactive setup            |
+| `gttoff` | `git town offline`           | Toggle offline mode          |
 
 ### Additional Commands
 
 | Alias   | Command              | Description                        |
 |---------|----------------------|------------------------------------|
-| `gtb`   | `git town branch`    | Show branch hierarchy/types        |
-| `gtcps` | `git town compress`  | Squash commits                     |
-| `gtdel` | `git town delete`    | Safely delete feature branch       |
-| `gthp`  | `git town help`      | Show help                          |
-| `gtrn`  | `git town rename`    | Rename branch (updates relations)  |
-| `gtre`  | `git town repo`      | Open repository in browser         |
+| `gttb`   | `git town branch`    | Show branch hierarchy/types        |
+| `gttcps` | `git town compress`  | Squash commits                     |
+| `gttdel` | `git town delete`    | Safely delete feature branch       |
+| `gtthp`  | `git town help`      | Show help                          |
+| `gttrn`  | `git town rename`    | Rename branch (updates relations)  |
+| `gttre`  | `git town repo`      | Open repository in browser         |
 
 ## Safe Function Alternatives
 
 If aliases conflict with other plugins, you can use the `gtt_*` function versions:
 
 ```zsh
-gtt_hack        # instead of gth
-gtt_sync        # instead of gtsy
-gtt_switch      # instead of gtsw
+gtt_hack        # instead of gtth
+gtt_sync        # instead of gttsy
+gtt_switch      # instead of gttsw
 # ... and so on for all commands
 ```
 
@@ -143,7 +143,7 @@ plugins=(... zsh-git-town)
 
 1. Ensure Git Town is installed: `git town --version`
 2. Reload your shell: `source ~/.zshrc`
-3. Check if the plugin is loaded: `which gth`
+3. Check if the plugin is loaded: `which gtth`
 
 ### Conflicts with other aliases
 
@@ -153,7 +153,7 @@ Use the safe function versions (`gtt_*`) instead of the short aliases.
 
 Pull requests are welcome! When adding new aliases:
 
-1. Follow the existing naming pattern (`gt*` for aliases, `gtt_*` for functions)
+1. Follow the existing naming pattern (`gtt*` for aliases, `gtt_*` for functions)
 2. Update the README tables
 3. Test with both Oh My Zsh and manual installation
 
