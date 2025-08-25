@@ -23,11 +23,45 @@ Then add to your `~/.zshrc`:
 plugins=(... zsh-git-town)
 ```
 
-### Manual Installation
+### Manual Installation (Plain Zsh)
 
 ```sh
 git clone https://github.com/mkusaka/zsh-git-town ~/.zsh-git-town
 echo "source ~/.zsh-git-town/git-town.plugin.zsh" >> ~/.zshrc
+```
+
+Recommended for completions in plain zsh:
+
+```zsh
+# Ensure completion system is initialized (if not using a framework)
+autoload -U compinit && compinit
+
+# Optional: enable Git Town's official completions
+eval "$(git town completions zsh 2>/dev/null || git town completion zsh)"
+# or set before sourcing the plugin to auto-enable via env var
+export GIT_TOWN_ZSH_LIVE_COMPLETION=1
+```
+
+Reload your shell: `exec zsh`
+
+### Zinit
+
+If you use zinit:
+
+```zsh
+# Install zinit first: https://github.com/zdharma-continuum/zinit
+
+# Ensure completion system is initialized
+autoload -U compinit && compinit
+
+# Optional: enable live completion before loading the plugin
+export GIT_TOWN_ZSH_LIVE_COMPLETION=1
+
+# Load the plugin
+zinit light mkusaka/zsh-git-town
+
+# Alternatively, load Git Town completions explicitly
+eval "$(git town completions zsh 2>/dev/null || git town completion zsh)"
 ```
 
 ## Aliases Reference
@@ -112,14 +146,14 @@ gtt_switch      # instead of gttsw
 
 ## Completion Support (Optional)
 
-Git Town provides excellent shell completion. To enable it:
+Git Town provides excellent shell completion. This plugin integrates it for all `gtt*` aliases and `gtt_*` functions and shows a short one-line description of the alias during completion. To enable or enhance it:
 
 ### Option A: Runtime Generation (Recommended for latest features)
 
 Add to your `~/.zshrc` after loading the plugin:
 
 ```zsh
-eval "$(git town completion zsh)"
+eval "$(git town completions zsh 2>/dev/null || git town completion zsh)"
 ```
 
 ### Option B: Environment Variable
@@ -130,6 +164,10 @@ Set this before loading the plugin to auto-enable completion:
 export GIT_TOWN_ZSH_LIVE_COMPLETION=1
 plugins=(... zsh-git-town)
 ```
+
+Notes:
+- The plugin wires completion for all aliases and function variants, and shows the alias description above the suggestions.
+- Newer Git Town versions use `completions`; older versions use `completion`. The plugin auto-detects either.
 
 ## Requirements
 
